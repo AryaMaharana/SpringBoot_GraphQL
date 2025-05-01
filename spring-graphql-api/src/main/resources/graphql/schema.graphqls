@@ -11,8 +11,19 @@ type Book {
     author: Author
 }
 
+input CreateBookRequest {
+    bookId: ID
+    bookName: String
+    price: Int
+    authorId: ID
+}
+
 type Query {
     getBookByBookId(bookId: ID!): Book
     getAllBooks: [Book]
     getBookByAuthorId(authorId: ID): [Book]
+}
+
+type Mutation {
+    addBooks(input: CreateBookRequest): Book
 }
