@@ -29,5 +29,10 @@ public class BookController {
         return service.getAllBooks();
     }
 
+    @QueryMapping
+   public List<Book> getBookByAuthorId(@Argument Integer authorId){
+        return service.getBookByAuthorId(authorId);
+   }
+
 
 }

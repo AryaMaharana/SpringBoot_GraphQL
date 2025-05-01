@@ -1,6 +1,7 @@
 package com.graphql.api.service;
 
 import com.graphql.api.entitie.Book;
+import com.graphql.api.repository.AuthorRepository;
 import com.graphql.api.repository.BookRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,9 @@ public class BookService {
             response = book;
         }
         return response;
+    }
+
+    public List<Book> getBookByAuthorId(Integer authorId){
+        return repo.findByAuthorAuthorId(authorId);
     }
 }

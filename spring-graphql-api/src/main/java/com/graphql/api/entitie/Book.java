@@ -13,6 +13,9 @@ public class Book {
     private Integer bookId;
     private String bookName;
     private Integer price;
-    private String author;
+
+    @ManyToOne()
+    @JoinColumn(name = "authorId")
+    private Author author;
 
 }
